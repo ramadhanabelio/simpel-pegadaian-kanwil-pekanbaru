@@ -4,7 +4,8 @@
         <div class="sidebar-content">
             <div class="user">
                 <div class="avatar-sm float-left mr-2">
-                    <img src="{{ asset('img/profile.jpg') }}" alt="Profile Default" class="avatar-img rounded-circle">
+                    <img src="{{ Auth::user()->profile ? asset('uploads/profile/' . Auth::user()->profile) : asset('img/profile.jpg') }}"
+                        alt="Profile Default" class="avatar-img rounded-circle">
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">

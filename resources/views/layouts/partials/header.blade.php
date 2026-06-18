@@ -28,8 +28,8 @@
                 <li class="nav-item dropdown hidden-caret">
                     <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
                         <div class="avatar-sm">
-                            <img src="{{ Auth::user()->profile ? asset(Auth::user()->profile) : asset('img/profile.jpg') }}"
-                                alt="Profile" class="avatar-img rounded-circle">
+                            <img src="{{ Auth::user()->profile ? asset('uploads/profile/' . Auth::user()->profile) : asset('img/profile.jpg') }}"
+                                class="avatar-img rounded">
                         </div>
                     </a>
 
@@ -38,8 +38,8 @@
                             <li>
                                 <div class="user-box">
                                     <div class="avatar-lg">
-                                        <img src="{{ Auth::user()->profile ? asset(Auth::user()->profile) : asset('img/profile.jpg') }}"
-                                            alt="Profile" class="avatar-img rounded">
+                                        <img src="{{ Auth::user()->profile ? asset('uploads/profile/' . Auth::user()->profile) : asset('img/profile.jpg') }}"
+                                            class="avatar-img rounded">
                                     </div>
 
                                     <div class="u-text">
@@ -52,7 +52,7 @@
                             <li>
                                 <div class="dropdown-divider"></div>
 
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{ route('profile.edit') }}">
                                     My Profile
                                 </a>
 
